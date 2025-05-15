@@ -2,9 +2,41 @@
 <html>
 <head>
   <title>About Hostel - Last Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+    }
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    a {
+      text-decoration: none;
+      color: navy;
+    }
+  </style>
 </head>
 <body>
+<h2>🏨 About Our Hostel</h2>
+  <p id="about"></p>
 
+  <h3>📍 Location</h3>
+  <p id="location"></p>
+
+  <h3>📞 Contact Us</h3>
+  <p id="email"></p>
+  <p id="phone"></p>
+  <p id="hours"></p>
+
+  <h3>🚀 Our Brand Message</h3>
+  <p><strong id="tagline"></strong></p>
+
+  <h3>📱 Follow Us</h3>
+  <ul id="social-links"></ul>
+
+  <hr>
+  <p id="footer"></p>
   <h2>🏨 About Our Hostel</h2>
   <p>Our hostel provides a secure, comfortable, and affordable environment for students from around the country. With well-furnished rooms, 24/7 security, high-speed internet, and clean dining facilities, we ensure a homely atmosphere that supports academic and personal growth.</p>
 
@@ -16,6 +48,56 @@
   <p>Phone: +1-234-567-8901</p>
   <p>Office Hours: Mon – Fri | 9:00 AM – 5:00 PM</p>
 
-  
+  <h3>🚀 Our Brand Message</h3>
+  <p><strong>"More Than a Stay — It's a Student’s Second Home."</strong></p>
+
+  <h3>📱 Follow Us</h3>
+  <ul>
+    <li><a href="https://facebook.com">Facebook</a></li>
+    <li><a href="https://instagram.com">Instagram</a></li>
+    <li><a href="https://twitter.com">Twitter</a></li>
+  </ul>
+
+  <hr>
+  <p>&copy; 2025 Hostel Management System. All rights reserved.</p>
+<script>
+    // Dynamic content as a JavaScript object
+    const hostelData = {
+      about: "Our hostel provides a secure, comfortable, and affordable environment for students from around the country. With well-furnished rooms, 24/7 security, high-speed internet, and clean dining facilities, we ensure a homely atmosphere that supports academic and personal growth.",
+      location: "123 Student Avenue, Campus City, 456789",
+      email: "Email: hostel.support@example.com",
+      phone: "Phone: +1-234-567-8901",
+      hours: "Office Hours: Mon – Fri | 9:00 AM – 5:00 PM",
+      tagline: '"More Than a Stay — It\'s a Student’s Second Home."',
+      social: {
+        Facebook: "https://facebook.com",
+        Instagram: "https://instagram.com",
+        Twitter: "https://twitter.com"
+      },
+      year: new Date().getFullYear()
+    };
+
+    // Injecting the content into HTML
+    document.getElementById('about').textContent = hostelData.about;
+    document.getElementById('location').textContent = hostelData.location;
+    document.getElementById('email').textContent = hostelData.email;
+    document.getElementById('phone').textContent = hostelData.phone;
+    document.getElementById('hours').textContent = hostelData.hours;
+    document.getElementById('tagline').textContent = hostelData.tagline;
+
+    const socialLinks = document.getElementById('social-links');
+    for (const [platform, url] of Object.entries(hostelData.social)) {
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = url;
+      a.textContent = platform;
+      a.target = "_blank";
+      li.appendChild(a);
+      socialLinks.appendChild(li);
+    }
+
+    document.getElementById('footer').innerHTML = `&copy; ${hostelData.year} Hostel Management System. All rights reserved.`;
+  </script>
+
 </body>
 </html>
