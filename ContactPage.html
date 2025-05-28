@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>About Hostel - Last Page</title>
   <meta charset="UTF-8">
+  <title>About Hostel - Last Page</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -17,35 +17,67 @@
       color: navy;
     }
   </style>
-
 </head>
 <body>
-
-  <h2>🏨 About Our Hostel</h2>
-  <p>Our hostel provides a secure, comfortable, and affordable environment for students from around the country. With well-furnished rooms, 24/7 security, high-speed internet, and clean dining facilities, we ensure a homely atmosphere that supports academic and personal growth.</p>
+<h2>🏨 About Our Hostel</h2>
+  <p id="about"></p>
 
   <h3>📍 Location</h3>
-  <p>123 Student Avenue, Campus City, 456789</p>
+  <p id="location"></p>
 
   <h3>📞 Contact Us</h3>
-  <p>Email: hostel.support@example.com</p>
-  <p>Phone: +1-234-567-8901</p>
-  <p>Office Hours: Mon – Fri | 9:00 AM – 5:00 PM</p>
+  <p id="email"></p>
+  <p id="phone"></p>
+  <p id="hours"></p>
 
-   <h3>🚀 Our Brand Message</h3>
-  <p><strong>"More Than a Stay — It's a Student’s Second Home."</strong></p>
+
+  <h3>🚀 Our Brand Message</h3>
+  <p><strong id="tagline"></strong></p>
 
   <h3>📱 Follow Us</h3>
-  <ul>
-    <li><a href="https://facebook.com">Facebook</a></li>
-    <li><a href="https://instagram.com">Instagram</a></li>
-    <li><a href="https://twitter.com">Twitter</a></li>
-  </ul>
+  <ul id="social-links"></ul>
 
   <hr>
-  <p>&copy; 2025 Hostel Management System. All rights reserved.</p>
+  <p id="footer"></p>
 
+  <script>
+    const hostelData = {
+      about: "Welcome to Our Hostel – A Home Away from HomeOur hostel is designed to provide a safe, comfortable, and budget-friendly living space for students hailing from all corners of the country. We understand the importance of a nurturing environment during academic life, and our facilities reflect a perfect blend of convenience, security, and warmth. Each room is well-furnished with essential amenities such as a comfortable bed, study table, wardrobe, and adequate lighting, ensuring a cozy and productive space for every student. We maintain round-the-clock security with trained personnel and surveillance systems to ensure a safe and secure living experience. To support your academic needs, we offer high-speed internet connectivity across the premises, enabling seamless online learning, research, and communication. Our hygienic dining facilities provide freshly prepared, nutritious meals, catering to diverse dietary preferences while maintaining high cleanliness standards. Beyond the basics, our hostel fosters a friendly and inclusive atmosphere where students can interact, collaborate, and build lasting friendships. We encourage a balanced lifestyle that supports both academic excellence and personal well-being. Whether you're focused on your studies or building memories with friends, our hostel offers the ideal environment to grow, thrive, and feel at home.",
+      location: "123 Student Avenue, Campus City, 456789",
+      email: "Email: hostel.support@example.com",
+      phone: "Phone: +1-234-567-8901",
+      hours: "Office Hours: Mon – Fri | 9:00 AM – 5:00 PM",
+      tagline: "More Than a Stay — It's a Student’s Second Home.",
+      social: {
+        Facebook: "https://facebook.com",
+        Instagram: "https://instagram.com",
+        Twitter: "https://twitter.com"
+      },
+      year: new Date().getFullYear()
+    };
+
+    document.getElementById('about').textContent = hostelData.about;
+    document.getElementById('location').textContent = hostelData.location;
+    document.getElementById('email').textContent = hostelData.email;
+    document.getElementById('phone').textContent = hostelData.phone;
+    document.getElementById('hours').textContent = hostelData.hours;
+    document.getElementById('tagline').textContent = hostelData.tagline;
+
+    const socialLinks = document.getElementById('social-links');
+    for (const [platform, url] of Object.entries(hostelData.social)) {
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = url;
+      a.textContent = platform;
+      a.target = "_blank";
+      li.appendChild(a);
+      socialLinks.appendChild(li);
+    }
+
+    document.getElementById('footer').innerHTML = `&copy; ${hostelData.year} Hostel Management System. All rights reserved.`;
+  </script
+  >
+  <P> pull request </p>
 </body>
 </html>
-</body>
-</html>
+
